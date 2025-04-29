@@ -1,0 +1,117 @@
+:root {
+    --primary-bg: #0d1b2a;         /* Dark navy blue */
+    --secondary-bg: #1b263b;       /* Deep slate blue */
+    --accent-color: #e63946;       /* Reddish contrast color */
+    --light-text: #f1faee;
+    --box-bg: #415a77;             /* Muted blue for boxes */
+    --box-text: #f1faee;
+    --btn-bg: #1b263b;
+    --btn-text: #f1faee;
+    --shadow: rgba(0, 0, 0, 0.2);
+    --border-radius: 1rem;
+    --font-lg: 8vmin;
+    --font-md: 1.25rem;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: var(--primary-bg);
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--light-text);
+  }
+  
+  .container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+  }
+  
+  .box {
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: var(--border-radius);
+    border: none;
+    background-color: var(--box-bg);
+    color: var(--accent-color);
+    font-size: var(--font-lg);
+    font-weight: bolder;
+    box-shadow: 0 0 1rem var(--shadow);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .box:hover {
+    transform: scale(1.05);
+  }
+  
+  #reset-btn,
+  #new-btn {
+    padding: 1rem;
+    font-size: var(--font-md);
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border-radius: var(--border-radius);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0.5rem;
+  }
+  
+  #reset-btn:hover,
+  #new-btn:hover {
+    background-color: #0b132b;
+  }
+  
+  #msg {
+    color: var(--box-text);
+    font-size: var(--font-lg);
+  }
+  
+  .msg-container {
+    height: 25vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hide {
+    display: none;
+  }
+
+  .box.clicked {
+    animation: clickGlow 0.3s ease-out;
+  }
+  
+
+  @keyframes clickGlow {
+    0% {
+      box-shadow: 0 0 0.5rem var(--accent-color);
+    }
+    50% {
+      box-shadow: 0 0 2rem var(--accent-color);
+    }
+    100% {
+      box-shadow: 0 0 0.5rem var(--accent-color);
+    }
+  }
+
+ 
+  
